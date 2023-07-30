@@ -7,24 +7,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{723652D1-147
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{3FBFA134-A624-4328-8571-D153C8E37A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorageAdmin.Backend.Api", "src\backend\BlobStorageAdmin.Backend.Api\BlobStorageAdmin.Backend.Api.csproj", "{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobStorageAdmin.Backend.Api", "src\backend\BlobStorageAdmin.Backend.Api\BlobStorageAdmin.Backend.Api.csproj", "{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorageAdmin.Backend.Api.Business", "src\backend\BlobStorageAdmin.Backend.Api.Business\BlobStorageAdmin.Backend.Api.Business.csproj", "{6229A820-34B9-4408-8277-9D1DA2C428E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorageAdmin.Backend.Api.Data", "src\backend\BlobStorageAdmin.Backend.Api.Data\BlobStorageAdmin.Backend.Api.Data.csproj", "{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorageAdmin.Backend.Api.Shared", "src\backend\BlobStorageAdmin.Backend.Api.Shared\BlobStorageAdmin.Backend.Api.Shared.csproj", "{716F3B85-CC3B-41BB-9372-7F43AA600C42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6229A820-34B9-4408-8277-9D1DA2C428E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6229A820-34B9-4408-8277-9D1DA2C428E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6229A820-34B9-4408-8277-9D1DA2C428E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6229A820-34B9-4408-8277-9D1DA2C428E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716F3B85-CC3B-41BB-9372-7F43AA600C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716F3B85-CC3B-41BB-9372-7F43AA600C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716F3B85-CC3B-41BB-9372-7F43AA600C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716F3B85-CC3B-41BB-9372-7F43AA600C42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3FBFA134-A624-4328-8571-D153C8E37A10} = {723652D1-147B-4C05-8B33-BEFA38113F55}
 		{833DF433-CBA4-4FE2-907D-CFCD0E8BEAF5} = {3FBFA134-A624-4328-8571-D153C8E37A10}
+		{6229A820-34B9-4408-8277-9D1DA2C428E2} = {3FBFA134-A624-4328-8571-D153C8E37A10}
+		{EB83E409-CE73-4340-AE50-AEC9EC4CD7BB} = {3FBFA134-A624-4328-8571-D153C8E37A10}
+		{716F3B85-CC3B-41BB-9372-7F43AA600C42} = {3FBFA134-A624-4328-8571-D153C8E37A10}
 	EndGlobalSection
 EndGlobal

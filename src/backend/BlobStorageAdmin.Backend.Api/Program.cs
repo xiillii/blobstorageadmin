@@ -1,8 +1,22 @@
+using BlobStorageAdmin.Backend.Api.Data;
+using BlobStorageAdmin.Backend.Api.Shared.Contracts;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddSingleton<IStorageData, AzureBlobStorageData>();
+builder.Services.AddSingleton<IBusinessContainer, BlobStorageAdmin.Backend.Api.Business.Container.Business>();
+
+
+
+builder.Services.AddControllers().AddJsonOptions(op =>
+{
+    op.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    op.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

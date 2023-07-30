@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlobStorageAdmin.Backend.Api.Data\BlobStorageAdmin.Backend.Api.Data.csproj" />
+    <ProjectReference Include="..\BlobStorageAdmin.Backend.Api.Shared\BlobStorageAdmin.Backend.Api.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
