@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BlobStorageAdmin.Backend.Api.Data\BlobStorageAdmin.Backend.Api.Data.csproj" />
     <ProjectReference Include="..\BlobStorageAdmin.Backend.Api.Shared\BlobStorageAdmin.Backend.Api.Shared.csproj" />
   </ItemGroup>

@@ -2,24 +2,28 @@
 using BlobStorageAdmin.Backend.Api.Shared.Contracts;
 using BlobStorageAdmin.Backend.Api.Shared.Entities.InnerRequests;
 using BlobStorageAdmin.Backend.Api.Shared.Model.Responses;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Runtime.ConstrainedExecution;
 
 namespace BlobStorageAdmin.Backend.Api.Business.Container;
 
 public class Business : IBusinessContainer
 {
     private readonly IStorageData storageData;
+    private readonly ILogger<Business> logger;
 
-    public Business(IStorageData sd)
+    public Business(IStorageData sd, ILogger<Business> logger)
     {
         storageData = sd;
+        this.logger = logger;
     }
 
     public async Task<ContainerListResponse> GetListAsync(ContainerListRequest request, CancellationToken cancellationToken = default(CancellationToken))
     {
         var response = new ContainerListResponse(request.OperationIdentifier);
         try
-        {
+        {            
             var result = await storageData.ListAsync(1, "", cancellationToken);
             if (result != null)
             {
@@ -32,10 +36,11 @@ public class Business : IBusinessContainer
                     response.Data.Add(item.ContainerItemToDto());
                 }
             }
+            throw new OperationCanceledException();
         }
         catch (OperationCanceledException cex)
         {
-            Debug.WriteLine(cex);
+            logger.LogError($"Operation {request.OperationIdentifier}: {cex}");
             response.Meta.ResponseStatus = Shared.Model.Enums.ResponseType.Fail;
             response.Meta.Errors = new List<Shared.Model.Error>
             {
@@ -45,7 +50,7 @@ public class Business : IBusinessContainer
         catch (Exception ex)
         {
 
-            Debug.WriteLine(ex);
+            logger.LogError($"Operation {request.OperationIdentifier}: {ex}");
             response.Meta.ResponseStatus = Shared.Model.Enums.ResponseType.Fail;
             response.Meta.Errors = new List<Shared.Model.Error>
             {
