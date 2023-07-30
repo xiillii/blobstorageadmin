@@ -31,8 +31,6 @@ public class Business : IBusinessContainer
                     response.Data.Add(item.ContainerItemToDto());
                 }
             }
-            throw new Exception();
-            
         }
         catch (Exception ex)
         {
