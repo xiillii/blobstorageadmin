@@ -28,9 +28,19 @@ public class Business : IBusinessContainer
 
                 foreach (var item in result)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
                     response.Data.Add(item.ContainerItemToDto());
                 }
             }
+        }
+        catch (OperationCanceledException cex)
+        {
+            Debug.WriteLine(cex);
+            response.Meta.ResponseStatus = Shared.Model.Enums.ResponseType.Fail;
+            response.Meta.Errors = new List<Shared.Model.Error>
+            {
+                new Shared.Model.Error { Code = "C001_ERROR", Message = "Operation cancelled" }
+            };
         }
         catch (Exception ex)
         {
