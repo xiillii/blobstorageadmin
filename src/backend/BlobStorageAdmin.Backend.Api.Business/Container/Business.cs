@@ -35,8 +35,7 @@ public class Business : IBusinessContainer
                     cancellationToken.ThrowIfCancellationRequested();
                     response.Data.Add(item.ContainerItemToDto());
                 }
-            }
-            throw new OperationCanceledException();
+            }            
         }
         catch (OperationCanceledException cex)
         {
